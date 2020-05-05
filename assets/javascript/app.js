@@ -1,25 +1,35 @@
 $(document).ready(function(){
-//have a start button to begin the game everything else will be hidden.
 
+//ON CLICK FOR BUTTONS
 $("#startButton").on("click", startTimer);
+$("#startButton").on("click",displayQuestion);
+$(".doneButton").on("click",stopTimer);
 
-//onclick function for start button and timer beginning
 
-//once the player clicks start the timer  will begin and questions and timer divs will show still hidden results div
-
-//display timer to the DOM create a function for the timer
+//FUNCTIONS FOR TIMER
 var timeRemaining = 120;
 
 function startTimer(){
     timeRemaining = 120;
     var intervalId;
     intervalId = setInterval(count,1000);
+    $("#startButton").hide();
     }
 function count(){
     timeRemaining--;
     var converted = timeConverter(timeRemaining);
-    $("#display").text(converted);
+    $("#display").text("Time Remaining: " + converted);
+    if (converted === 0){
+        stopTimer();
+        $("#display").empty();
+    }
 }
+function stopTimer(){
+    clearInterval();
+    checkAnswer();
+}
+
+//time converter taken from stopwatch activity
 function timeConverter(t) {
 
     var minutes = Math.floor(t / 60);
@@ -39,45 +49,89 @@ function timeConverter(t) {
     return minutes + ":" + seconds;
   }
 
-function timerReset(){
-    clearInterval();
-    timeRemaining = 120;
-    $("#display").text("01:59");
-}
-//display questions to the DOM
+   
+//FUNCTIONS FOR QUESTIONS AND ANSWERS
+    function displayQuestion(){
+      var questionContainer = $("#questions");
+      var answerSelection = $("#answerform");
+      questionContainer.append('<h2> Answer the following questions:</h2>');
 
-var trivia = {
-    displayQuestions =  function(){
-        var questionList = $("#questions");
-        var answers = $("#answers");
-        questionList.append("<h2> Answer the following questions : </h2>")
-        for (var i=0; i<quizQuestions.length; i++){
-        questionList.append('<div id = "question'> + quizQuestions[i].question + '</div>');
+      for (var i=0; i<quizQuestions.length; i++){
+          questionContainer.append(quizQuestions[i].question);
+
+          var answer1 = quizQuestions[i].answers[0];
+          var answer2 = quizQuestions[i].answers[1];
+          var answer3 = quizQuestions[i].answers[2];
+          var answer4 = quizQuestions[i].answers[3];
+
+          questionContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer1 + '</label></div>');
+          questionContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer2 + '</label></div>');
+          questionContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer3 + '</label></div>');
+          questionContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer4 + '</label></div>');
+        }
+        var doneButton = $("<button>");
+        doneButton.addClass("doneButton");
+        doneButton.text("DONE")
+        $("#questions").append(doneButton);
+        $(".doneButton").on("click",stopTimer);
+
+        
+      }
+    
+    //checking for correct answers depending on user input
+    function checkAnswer(){
+    var numcorrectAnswers = 0;
+    var numincorrectAnswers = 0;
+    var correctAnswer;
+    var userAnswer;
+
+    for (var i=0; i<quizQuestions.length; i++){
+        correctAnswer = quizQuestions[i].correctAnswer;
+        userAnswer = $('input[id=radio'+i+']:checked + label').text();
+
+        if (userAnswer === correctAnswer){
+            numcorrectAnswers++;
+        } else if(userAnswer !== correctAnswer){
+            numincorrectAnswers++;
+        } 
     }
-} ;
+    //FUNCTION TO HIDE QUESTIONS AND SHOW RESULTS PAGE
+   function results(){
+    $("#results-page").show();
+    $("#title").text("Here's how you did!");
+    $("#questions").empty();
+    $("#questions").hide();
+    $("#display").empty();
+    $("#display").hide();
+    $("#startButton").hide();
+    $("#doneButton").hide();
+    $("#correctAnswers").text("Correct Answers: " + numcorrectAnswers);
+    $("#incorrectAnswers").text("Incorrect Answers: " + numincorrectAnswers);
+        var resetButton = $("<button>");
+        resetButton.addClass("resetButton");
+        resetButton.text("START OVER")
+        $("#results-page").append(resetButton);
+        $(".resetButton").on("click",gameReset);
+        $(".resetButton").on("click",displayQuestion);
+        $(".resetButton").on("click", startTimer);
+
 }
+    results();
+        
+    } 
+   
+})
+    //FUNCTION TO START TRIVIA OVER W/O REFRESHING PAGE
+    function gameReset(){
+        $("#questions").show();
+        $("#display").show();
+        $("#results-page").hide();
+        $(".doneButton").show();
+        $(".resetButton").hide();
+    }
 
 
-//function to play the game
-
-//timer will count down from 1 minute to complete the test one
-
-//if else statements to determine number of incorrect and correct answers
-
-//once the timer reaches zero, remove questions and display results div
-
-//add a done button
-
-//counter variables for correct answers, wrong answers, and score total 
-var correctAnswers = 0;
-var incorrectAnswers = 0;
-
-
-//start over button will reset the game
-//onclick for reset including timer reset function
-$("#resetButton").on("click",timerReset());
-
-
+//QUESTION BANK
     var quizQuestions = [
         {
             question:"Which of the following is NOT part of Snow White's Seven Dwarves?",
@@ -155,6 +209,5 @@ $("#resetButton").on("click",timerReset());
             correctAnswer:"Your dreams come true"
         },
     ]
-})
 
 
