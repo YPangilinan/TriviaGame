@@ -8,10 +8,10 @@ $(".doneButton").on("click",stopTimer);
 
 //FUNCTIONS FOR TIMER
 var timeRemaining = 120;
+var intervalId;
 
 function startTimer(){
     timeRemaining = 120;
-    var intervalId;
     intervalId = setInterval(count,1000);
     $("#startButton").hide();
     }
@@ -25,7 +25,7 @@ function count(){
     }
 }
 function stopTimer(){
-    clearInterval();
+    clearInterval(intervalId);
     checkAnswer();
 }
 
