@@ -166,12 +166,12 @@ function timeConverter(t) {
             correctAnswer:"A loaf of bread"
         },
         {
-            question:"What is the name of Mulan's horse",
+            question:"What is the name of Mulan's horse?",
             answers:["Mushu", "Cric-kee", "Genghis", "Khan"],
             correctAnswer:"Khan"
         },
         {
-            question:"Who said the famous movie quote: 'Sometimes we only see how people are different from us. But if you look hard enoughm you see how much we're all alike'",
+            question:"Who said the famous movie quote: 'Sometimes we only see how people are different from us. But if you look hard enoughm you see how much we're all alike'?",
             answers:["Laverne in The Hunchback of Notre Dame", "Anna in Frozen 2", "Jasmine in Aladdin", "John Smith in Pocahontas"],
             correctAnswer:"Jasmine in Aladdin"
         },

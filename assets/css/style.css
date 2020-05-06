@@ -1,19 +1,20 @@
 body{
-    background-image: url("../images/toystory.jpg");
+    background-image: url("../images/Disney-Computer-Wallpaperdisney-computer-wallpaper-1920x1080-images-PIC-WPXH454290.jpg");
     font-family: 'Oswald', sans-serif;
     font-weight:200px;
     font-size:18px;
 }
 .container{
+    margin-top:-2;
     max-width:900px;
-    max-height: 400px;
+    max-height: 275px;
     overflow:auto; 
     
 }
 
 #main-logo{
-    margin-top:50px;
     width:800px;
+    height:225px;
     border-bottom: 4px solid;
 
 }
@@ -70,7 +71,56 @@ h2{
     margin-top:10px;
 }
 
+#disneyimg{
+    border-radius:50%;
+    height:100px;
+    display:inline-block;
+}
+
+.imgcontainer{
+    margin-top:75px;
+}
+
+header{
+    background-color: black;
+}
+
+.title {
+    position: relative;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 5px;
+    color:white;
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-left:10px;
+}
+
+#title-disney{
+    top: 12px;
+    float: left;
+
+}
+
+#icons{
+    float:right;
+}
+.icon {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.icon-github{
+    background-image: url("../images/github.png");
+    margin-top:10px;
+}
+.icon-disney{
+    background-image: url("../images/disneyworld.png.png");
+    margin-top:10px;
+}
+
 footer{
-    border-top: 2px solid;
     background-color:black;
 }
