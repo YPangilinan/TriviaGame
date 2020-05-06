@@ -7,11 +7,12 @@ $(".doneButton").on("click",stopTimer);
 
 
 //FUNCTIONS FOR TIMER
-var timeRemaining = 120;
+var timeRemaining = 90;
 var intervalId;
 
+
 function startTimer(){
-    timeRemaining = 120;
+    timeRemaining = 90;
     intervalId = setInterval(count,1000);
     $("#startButton").hide();
     }
@@ -19,7 +20,7 @@ function count(){
     timeRemaining--;
     var converted = timeConverter(timeRemaining);
     $("#display").text("Time Remaining: " + converted);
-    if (converted === 0){
+    if (timeRemaining === 0){
         stopTimer();
         $("#display").empty();
     }
