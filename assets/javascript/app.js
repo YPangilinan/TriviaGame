@@ -15,11 +15,12 @@ function startTimer(){
     timeRemaining = 90;
     intervalId = setInterval(count,1000);
     $("#startButton").hide();
+    $("#start-text").hide();
     }
 function count(){
     timeRemaining--;
     var converted = timeConverter(timeRemaining);
-    $("#display").text("Time Remaining: " + converted);
+    $("#display").text("TIME REMAINING: " + converted);
     if (timeRemaining === 0){
         stopTimer();
         $("#display").empty();
@@ -58,7 +59,7 @@ function timeConverter(t) {
       questionContainer.append('<h2> Answer the following questions:</h2>');
 
       for (var i=0; i<quizQuestions.length; i++){
-          questionContainer.append(quizQuestions[i].question);
+          questionContainer.append("<br><b>"+ quizQuestions[i].question +"<b>");
 
           var answer1 = quizQuestions[i].answers[0];
           var answer2 = quizQuestions[i].answers[1];

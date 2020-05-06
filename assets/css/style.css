@@ -1,3 +1,76 @@
+body{
+    background-image: url("../images/toystory.jpg");
+    font-family: 'Oswald', sans-serif;
+    font-weight:200px;
+    font-size:18px;
+}
 .container{
-    max-width:680px;
+    max-width:900px;
+    max-height: 400px;
+    overflow:auto; 
+    
+}
+
+#main-logo{
+    margin-top:50px;
+    width:800px;
+    border-bottom: 4px solid;
+
+}
+
+#mickey{
+    border-bottom: 2px solid;
+}
+
+h2{
+    text-align:center;
+    font-family: 'Staatliches', cursive;
+}
+
+#display{
+    text-align:center;
+    font-weight:500;
+}
+
+#startButton{
+    align-content: center;
+    
+}
+
+#left{
+    float:left;
+    position: fixed;
+}
+
+#right{
+    position: relative;
+    margin-left:270px;
+    overflow:auto;
+}
+
+#results-page{
+    position: relative;
+    margin-left:100px;
+    overflow:auto;
+}
+
+.responsive{
+    max-width: 100%;
+    height: auto;
+    margin-right:50px;
+}
+
+#title{
+    font-family: 'Staatliches', cursive;
+    font-weight:300px;
+    font-size:36px;
+}
+
+.doneButton{
+    margin-top:10px;
+}
+
+footer{
+    border-top: 2px solid;
+    background-color:black;
 }
