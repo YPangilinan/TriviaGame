@@ -3,6 +3,7 @@ body{
     font-family: 'Oswald', sans-serif;
     font-weight:200px;
     font-size:18px;
+    color:black;
 }
 .container{
     margin-top:-2;
@@ -88,11 +89,11 @@ header{
 .title {
     position: relative;
     font-family: 'Staatliches', cursive;
-    letter-spacing: 5px;
+    letter-spacing: 7px;
     color:white;
     font-size: 30px;
     margin-bottom: 20px;
-    margin-left:10px;
+    margin-left:20px;
 }
 
 #title-disney{
@@ -113,11 +114,17 @@ header{
 }
 
 .icon-github{
-    background-image: url("../images/github.png");
+    background-image: url("../images/github3.png");
     margin-top:10px;
 }
+
 .icon-disney{
-    background-image: url("../images/disneyworld.png.png");
+    background-image: url("../images/disneyapp.png");
+    margin-top:10px;
+}
+
+.icon-fb{
+    background-image: url("../images/fb.png");
     margin-top:10px;
 }
 

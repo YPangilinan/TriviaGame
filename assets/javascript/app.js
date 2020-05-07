@@ -101,7 +101,7 @@ function timeConverter(t) {
     //FUNCTION TO HIDE QUESTIONS AND SHOW RESULTS PAGE
    function results(){
     $("#results-page").show();
-    $("#title").text("Here's how you did!");
+    $("#title").text("So are you a true Disney fan?");
     $("#questions").empty();
     $("#questions").hide();
     $("#display").empty();
