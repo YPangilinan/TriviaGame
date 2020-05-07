@@ -9,15 +9,13 @@ body{
     margin-top:-2;
     max-width:900px;
     max-height: 275px;
-    overflow:auto; 
-    
+    overflow:auto;   
 }
 
 #main-logo{
     width:800px;
     height:225px;
     border-bottom: 4px solid;
-
 }
 
 #mickey{
@@ -99,12 +97,12 @@ header{
 #title-disney{
     top: 12px;
     float: left;
-
 }
 
 #icons{
     float:right;
 }
+
 .icon {
     position: relative;
     width: 44px;

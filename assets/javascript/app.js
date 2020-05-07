@@ -76,9 +76,7 @@ function timeConverter(t) {
         doneButton.addClass("btn btn-light")
         doneButton.text("DONE")
         $("#questions").append(doneButton);
-        $(".doneButton").on("click",stopTimer);
-
-        
+        $(".doneButton").on("click",stopTimer);  
       }
     
     //checking for correct answers depending on user input
@@ -118,12 +116,8 @@ function timeConverter(t) {
         $(".resetButton").on("click",gameReset);
         $(".resetButton").on("click",displayQuestion);
         $(".resetButton").on("click", startTimer);
-
-}
-    results();
-        
-    } 
-   
+}results();    
+    }  
 })
     //FUNCTION TO START TRIVIA OVER W/O REFRESHING PAGE
     function gameReset(){
