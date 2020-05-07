@@ -108,8 +108,8 @@ function timeConverter(t) {
     $("#display").hide();
     $("#startButton").hide();
     $("#doneButton").hide();
-    $("#correctAnswers").text("Correct Answers: " + numcorrectAnswers);
-    $("#incorrectAnswers").text("Incorrect Answers: " + numincorrectAnswers);
+    $("#correctAnswers").text("Number of Genie Wishes: " + numcorrectAnswers);
+    $("#incorrectAnswers").text("Dishonor to your family: " + numincorrectAnswers);
         var resetButton = $("<button>");
         resetButton.addClass("resetButton");
         resetButton.addClass("btn btn-light");
