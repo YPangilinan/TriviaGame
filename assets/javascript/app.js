@@ -20,7 +20,7 @@ function startTimer(){
 function count(){
     timeRemaining--;
     var converted = timeConverter(timeRemaining);
-    $("#display").text("TIME REMAINING: " + converted);
+    $("#display").text("DISNEY MAGIC REMAINING: " + converted);
     if (timeRemaining === 0){
         stopTimer();
         $("#display").empty();
