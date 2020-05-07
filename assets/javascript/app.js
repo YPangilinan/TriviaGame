@@ -73,6 +73,7 @@ function timeConverter(t) {
         }
         var doneButton = $("<button>");
         doneButton.addClass("doneButton");
+        doneButton.addClass("btn btn-light")
         doneButton.text("DONE")
         $("#questions").append(doneButton);
         $(".doneButton").on("click",stopTimer);
@@ -111,6 +112,7 @@ function timeConverter(t) {
     $("#incorrectAnswers").text("Incorrect Answers: " + numincorrectAnswers);
         var resetButton = $("<button>");
         resetButton.addClass("resetButton");
+        resetButton.addClass("btn btn-light");
         resetButton.text("START OVER")
         $("#results-page").append(resetButton);
         $(".resetButton").on("click",gameReset);
